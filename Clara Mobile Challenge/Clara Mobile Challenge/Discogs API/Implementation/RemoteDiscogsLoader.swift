@@ -78,12 +78,14 @@ extension RemoteDiscogsLoader: DiscogsSearchLoader {
     func search<Query: SearchQueryType>(
         query: String,
         type: Query,
-        page: Int
+        page: Int = 1,
+        perPage: Int = 30
     ) async throws -> Query.ReturnType {
         let queryItems = [
             URLQueryItem(name: "q", value: query),
             URLQueryItem(name: "type", value: type.typeIdentifier),
-            URLQueryItem(name: "page", value: String(page))
+            URLQueryItem(name: "page", value: String(page)),
+            URLQueryItem(name: "per_page", value: String(perPage))
         ]
         
         let request = try createRequest(for: "/database/search", queryItems: queryItems)

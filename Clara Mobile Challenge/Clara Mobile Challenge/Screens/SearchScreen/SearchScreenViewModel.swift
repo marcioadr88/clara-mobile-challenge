@@ -72,7 +72,8 @@ class SearchViewModel: ObservableObject {
                 try await loader?.search(
                     query: query,
                     type: ArtistSearchType(),
-                    page: currentPage
+                    page: currentPage,
+                    perPage: 30
                 )
             }.value
             

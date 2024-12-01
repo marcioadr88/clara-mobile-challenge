@@ -12,7 +12,7 @@ struct NullDiscogsLoader: DiscogsLoader {
         case nullError
     }
     
-    func search<Query>(query: String, type: Query, page: Int) async throws -> Query.ReturnType where Query: SearchQueryType {
+    func search<Query>(query: String, type: Query, page: Int, perPage: Int) async throws -> Query.ReturnType where Query: SearchQueryType {
         throw Error.nullError
     }
     

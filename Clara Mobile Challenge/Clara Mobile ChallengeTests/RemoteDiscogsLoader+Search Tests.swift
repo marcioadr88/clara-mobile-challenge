@@ -18,7 +18,7 @@ extension RemoteDiscogsLoaderTests {
         // when
         spy.completeNextRequest(withStatusCode: 200, data: dummyData)
         
-        let result = try await sut.search(query: "query", type: DummyQuery(), page: 1)
+        let result = try await sut.search(query: "query", type: DummyQuery(), page: 1, perPage: 30)
         
         // then
         XCTAssertEqual(result, expectedDataReturn)
@@ -31,7 +31,7 @@ extension RemoteDiscogsLoaderTests {
         spy.completeNextRequest(with: expectedError)
         
         do {
-            let _ = try await sut.search(query: "query", type: DummyQuery(), page: 1)
+            let _ = try await sut.search(query: "query", type: DummyQuery(), page: 1, perPage: 30)
             
             XCTFail("Should throw error")
         } catch RemoteDiscogsLoaderError.httpClientError(let reason) {
@@ -55,7 +55,7 @@ extension RemoteDiscogsLoaderTests {
         spy.completeNextRequest(withStatusCode: 500, data: dummyData)
         
         do {
-            _ = try await sut.search(query: "query", type: DummyQuery(), page: 1)
+            _ = try await sut.search(query: "query", type: DummyQuery(), page: 1, perPage: 30)
             
             XCTFail("Expected RemoteDiscogsLoaderError.serverError to be thrown")
         } catch RemoteDiscogsLoaderError.serverError(let message) {
@@ -75,7 +75,7 @@ extension RemoteDiscogsLoaderTests {
         
         // Then
         do {
-            _ = try await sut.search(query: "query", type: DummyQuery(), page: 1)
+            _ = try await sut.search(query: "query", type: DummyQuery(), page: 1, perPage: 30)
             XCTFail("Expected RemoteDiscogsLoaderError.invalidData to be thrown")
         } catch RemoteDiscogsLoaderError.invalidData {
             // Success

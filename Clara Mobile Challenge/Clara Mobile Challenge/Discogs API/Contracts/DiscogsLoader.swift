@@ -11,7 +11,8 @@ protocol DiscogsSearchLoader {
     func search<Query: SearchQueryType>(
         query: String,
         type: Query,
-        page: Int
+        page: Int,
+        perPage: Int
     ) async throws -> Query.ReturnType
 }
 
