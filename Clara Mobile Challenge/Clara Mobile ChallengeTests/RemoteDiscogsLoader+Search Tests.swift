@@ -11,8 +11,7 @@ import XCTest
 extension RemoteDiscogsLoaderTests {
     func test_requestCompletesWithSuccess() async throws {
         // Given
-        let spy = HTTPClientSpy()
-        let sut = makeSUT(httpClient: spy)
+        let (sut, spy) = makeSUT()
         let expectedDataReturn = DummyQuery.ReturnType(expectedResult: "success")
         let dummyData = expectedDataReturn.json.data(using: .utf8)!
         
@@ -26,8 +25,7 @@ extension RemoteDiscogsLoaderTests {
     }
     
     func test_requestCompletesWithError() async throws {
-        let spy = HTTPClientSpy()
-        let sut = makeSUT(httpClient: spy)
+        let (sut, spy) = makeSUT()
         let expectedError = NSError(domain: "TestError", code: 1, userInfo: nil)
         
         spy.completeNextRequest(with: expectedError)
@@ -47,8 +45,7 @@ extension RemoteDiscogsLoaderTests {
     
     func test_requestCompletesWithRemoteErrorOn500() async throws {
         // Given
-        let spy = HTTPClientSpy()
-        let sut = makeSUT(httpClient: spy)
+        let (sut, spy) = makeSUT()
         
         let expectedMessage = "Please try again"
         let remoteErrorDictionary: [String: String] = ["message": expectedMessage]
@@ -70,8 +67,7 @@ extension RemoteDiscogsLoaderTests {
     
     func test_requestCompletesWithInvalidData() async throws {
         // Given
-        let spy = HTTPClientSpy()
-        let sut = makeSUT(httpClient: spy)
+        let (sut, spy) = makeSUT()
         let invalidData = Data("invalid-json".utf8)
         
         // When

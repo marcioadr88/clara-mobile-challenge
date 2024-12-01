@@ -16,8 +16,11 @@ class HTTPClientSpy: HTTPClient {
     typealias Completion = Result<(Int, Data), Error>
     
     private var completion: Completion?
+    var request: URLRequest?
     
     func request(_ request: URLRequest) async throws -> (Data, HTTPURLResponse) {
+        self.request = request
+        
         return try await withCheckedThrowingContinuation { continuation in
             switch completion {
             case .success(let (statusCode, data)):

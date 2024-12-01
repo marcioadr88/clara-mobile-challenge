@@ -9,13 +9,17 @@ import XCTest
 @testable import Clara_Mobile_Challenge
 
 class RemoteDiscogsLoaderTests: XCTestCase {
-    func makeSUT(httpClient: HTTPClient = HTTPClientSpy()) -> DiscogsLoader {
-        return RemoteDiscogsLoader(
+    func makeSUT() -> (DiscogsLoader, HTTPClientSpy) {
+        let httpClientSpy = HTTPClientSpy()
+        
+        let loader = RemoteDiscogsLoader(
             baseURL: anyBaseURL(),
             apiKey: anyApiKey(),
             apiSecret: anyApiSecret(),
-            httpClient: httpClient
+            httpClient: httpClientSpy
         )
+        
+        return (loader, httpClientSpy)
     }
     
     func makeJSONFromDictionary(_ dictionary: [String: Any]) throws -> Data {
