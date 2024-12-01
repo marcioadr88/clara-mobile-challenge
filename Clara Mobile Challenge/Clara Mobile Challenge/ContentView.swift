@@ -8,14 +8,49 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.horizontalSizeClass)
+    var horizontalSizeClass
+    
+    @Environment(\.userInterfaceIdiom)
+    var userInterfaceIdiom
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        sizeClassBasedView()
+    }
+    
+    @ViewBuilder
+    func sizeClassBasedView() -> some View {
+        Group {
+            if horizontalSizeClass == .compact {
+                NavigationView {
+                    SearchScreenView()
+                }
+            } else {
+                HStack {
+                    SearchScreenView()
+                        .frame(maxWidth: 300)
+                    
+                    SearchResultsScreenView()
+                        .frame(maxWidth: .infinity)
+                }
+            }
         }
-        .padding()
+    }
+    
+    @ViewBuilder
+    func idiomBasedView() -> some View {
+        switch userInterfaceIdiom {
+        case .pad, .mac:
+            NavigationView {
+                SearchScreenView()
+                SearchResultsScreenView()
+            }
+            
+        default:
+            NavigationView {
+                SearchScreenView()
+            }
+        }
     }
 }
 

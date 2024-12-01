@@ -12,6 +12,10 @@ struct ClaraMobileChallengeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(
+                    \.userInterfaceIdiom,
+                     UserInterfaceIdiom.from(UIDevice.current.userInterfaceIdiom)
+                )
         }
     }
 }

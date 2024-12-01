@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0A11F6FA2CFC0160003E93B8 /* RemoteDiscogsLoader+Search Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F6F92CFC0160003E93B8 /* RemoteDiscogsLoader+Search Tests.swift */; };
 		0A11F6FC2CFC0196003E93B8 /* RemoteDiscogsLoader+GetArtistDetails Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F6FB2CFC0196003E93B8 /* RemoteDiscogsLoader+GetArtistDetails Tests.swift */; };
+		0A11F7002CFCA8E0003E93B8 /* SearchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F6FF2CFCA8E0003E93B8 /* SearchScreenView.swift */; };
+		0A11F7042CFCA94D003E93B8 /* SearchResultsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F7032CFCA94D003E93B8 /* SearchResultsScreenView.swift */; };
+		0A11F7072CFCAA7A003E93B8 /* UserInterfaceIdiom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F7062CFCAA7A003E93B8 /* UserInterfaceIdiom.swift */; };
 		0AA094F22CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA094F12CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift */; };
 		0AA094F42CFAB8E600BAC31C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA094F32CFAB8E600BAC31C /* ContentView.swift */; };
 		0AA094F62CFAB8E700BAC31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA094F52CFAB8E700BAC31C /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 /* Begin PBXFileReference section */
 		0A11F6F92CFC0160003E93B8 /* RemoteDiscogsLoader+Search Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteDiscogsLoader+Search Tests.swift"; sourceTree = "<group>"; };
 		0A11F6FB2CFC0196003E93B8 /* RemoteDiscogsLoader+GetArtistDetails Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteDiscogsLoader+GetArtistDetails Tests.swift"; sourceTree = "<group>"; };
+		0A11F6FF2CFCA8E0003E93B8 /* SearchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenView.swift; sourceTree = "<group>"; };
+		0A11F7032CFCA94D003E93B8 /* SearchResultsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsScreenView.swift; sourceTree = "<group>"; };
+		0A11F7062CFCAA7A003E93B8 /* UserInterfaceIdiom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceIdiom.swift; sourceTree = "<group>"; };
 		0AA094EE2CFAB8E600BAC31C /* Clara Mobile Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clara Mobile Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA094F12CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaraMobileChallengeApp.swift; sourceTree = "<group>"; };
 		0AA094F32CFAB8E600BAC31C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +98,23 @@
 			path = Contracts;
 			sourceTree = "<group>";
 		};
+		0A11F6FD2CFCA8D0003E93B8 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0A11F6FF2CFCA8E0003E93B8 /* SearchScreenView.swift */,
+				0A11F7032CFCA94D003E93B8 /* SearchResultsScreenView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0A11F7052CFCAA6E003E93B8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				0A11F7062CFCAA7A003E93B8 /* UserInterfaceIdiom.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		0AA094E52CFAB8E600BAC31C = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +136,8 @@
 		0AA094F02CFAB8E600BAC31C /* Clara Mobile Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				0A11F7052CFCAA6E003E93B8 /* Util */,
+				0A11F6FD2CFCA8D0003E93B8 /* Screens */,
 				0AE04A7B2CFABC0100FF112E /* Discogs API */,
 				0AA094F12CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift */,
 				0AA094F32CFAB8E600BAC31C /* ContentView.swift */,
@@ -288,6 +313,7 @@
 			files = (
 				0AE04A852CFACE3B00FF112E /* ArtistSearchType.swift in Sources */,
 				0AE04A912CFB9E0F00FF112E /* URLSessionHTTPClient.swift in Sources */,
+				0A11F7072CFCAA7A003E93B8 /* UserInterfaceIdiom.swift in Sources */,
 				0AE04A9D2CFBEF0500FF112E /* BandMember.swift in Sources */,
 				0AE04A9B2CFBEEF400FF112E /* ArtistDetail.swift in Sources */,
 				0AE04A952CFB9F1200FF112E /* RemoteDiscogsLoaderError.swift in Sources */,
@@ -296,6 +322,8 @@
 				0AA094F42CFAB8E600BAC31C /* ContentView.swift in Sources */,
 				0AE04A802CFACDFB00FF112E /* Artist.swift in Sources */,
 				0AE04A8F2CFB732D00FF112E /* HTTPClient.swift in Sources */,
+				0A11F7002CFCA8E0003E93B8 /* SearchScreenView.swift in Sources */,
+				0A11F7042CFCA94D003E93B8 /* SearchResultsScreenView.swift in Sources */,
 				0AE04A8B2CFACEA800FF112E /* Pagination.swift in Sources */,
 				0AA094F22CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift in Sources */,
 				0AE04A832CFACE2A00FF112E /* SearchQueryType.swift in Sources */,
