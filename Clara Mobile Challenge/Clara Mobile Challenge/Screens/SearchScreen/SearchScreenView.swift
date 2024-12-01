@@ -9,12 +9,18 @@ import SwiftUI
 
 struct SearchScreenView: View {
     @StateObject private var viewModel = SearchViewModel()
-    @State var selection: ArtistSearchResult?
+    @Binding var selection: ArtistSearchResult?
     
     @Environment(\.remoteDiscogsLoader)
     var remoteLoader
     
-    init() {}
+    init(selection: Binding<ArtistSearchResult?>) {
+        _selection = selection
+    }
+    
+    init() {
+        _selection = .constant(nil)
+    }
     
     var body: some View {
         VStack {
@@ -30,21 +36,32 @@ struct SearchScreenView: View {
                     .foregroundColor(.gray)
                     .padding()
             } else {
-                List(selection: $selection) {
-                    ForEach(viewModel.results, id: \.id) { artist in
-                        ArtistSearchResultView(artist: artist)
-                            .onAppear {
-                                if artist == viewModel.results.last {
-                                    viewModel.loadNextPage()
+                List(viewModel.results, id: \.self, selection: $selection) { artist in
+                    NavigationLink {
+                        SearchResultsScreenView(selection: $selection)
+                    } label: {
+                        VStack(alignment: .leading) {
+                            ArtistSearchResultView(artist: artist)
+                                .onAppear {
+                                    if artist == viewModel.results.last {
+                                        viewModel.loadNextPage()
+                                    }
                                 }
-                            }
+                            
+                        }
                     }
                     
-                    if viewModel.isLoading {
+                    if artist == viewModel.results.last && viewModel.isLoading {
                         ProgressView("Loading more...")
                             .frame(maxWidth: .infinity, alignment: .center)
                     }
                 }
+            }
+            
+        }
+        .onChange(of: viewModel.query) { newQuery in
+            if newQuery.isEmpty {
+                selection = nil
             }
         }
         .onAppear {

@@ -11,15 +11,18 @@ struct ContentView: View {
     @Environment(\.horizontalSizeClass)
     var horizontalSizeClass
     
+    @State
+    private var selectedArtist: ArtistSearchResult?
+    
     var body: some View {
         if horizontalSizeClass == .compact {
             NavigationView {
-                SearchScreenView()
+                SearchScreenView(selection: $selectedArtist)
             }
         } else {
             NavigationView {
-                SearchScreenView()
-                SearchResultsScreenView()
+                SearchScreenView(selection: $selectedArtist)
+                SearchResultsScreenView(selection: $selectedArtist)
             }
         }
     }

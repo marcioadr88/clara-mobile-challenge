@@ -5,7 +5,7 @@
 //  Created by Marcio Duarte on 2024-11-30.
 //
 
-struct ArtistSearchResult: Decodable, Hashable {
+struct ArtistSearchResult: Decodable, Hashable, Identifiable {
     let id: Int
     let title: String
     let thumb: String
