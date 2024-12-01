@@ -32,7 +32,7 @@ struct SearchScreenView: View {
             } else {
                 List(selection: $selection) {
                     ForEach(viewModel.results, id: \.id) { artist in
-                        resultView(artist: artist)
+                        ArtistSearchResultView(artist: artist)
                     }
                 }
             }
@@ -42,18 +42,6 @@ struct SearchScreenView: View {
         }
         .navigationTitle("Search")
         .searchable(text: $viewModel.query)
-    }
-    
-    func resultView(artist: ArtistSearchResult) -> some View {
-        HStack {
-            if let url = URL(string: artist.thumb) {
-                AsyncImage(url: url)
-                    .frame(width: 50, height: 50)
-                    .clipShape(Circle())
-            }
-            Text(artist.title)
-                .font(.headline)
-        }
     }
 }
 
