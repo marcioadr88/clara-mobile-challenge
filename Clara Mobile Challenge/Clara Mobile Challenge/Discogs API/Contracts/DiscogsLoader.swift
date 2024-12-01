@@ -7,12 +7,16 @@
 
 import Foundation
 
-protocol DiscogsLoader {
+protocol DiscogsSearchLoader {
     func search<Query: SearchQueryType>(
         query: String,
         type: Query,
         page: Int
     ) async throws -> Query.ReturnType
-    
+}
+
+protocol DiscogsGetArtistsDetailsLoader {
     func getArtistDetails(artistID: Int) async throws -> ArtistDetail
 }
+
+protocol DiscogsLoader: DiscogsSearchLoader, DiscogsGetArtistsDetailsLoader {}
