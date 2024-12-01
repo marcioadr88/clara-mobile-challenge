@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A11F6FA2CFC0160003E93B8 /* RemoteDiscogsLoader+Search Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F6F92CFC0160003E93B8 /* RemoteDiscogsLoader+Search Tests.swift */; };
+		0A11F6FC2CFC0196003E93B8 /* RemoteDiscogsLoader+GetArtistDetails Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F6FB2CFC0196003E93B8 /* RemoteDiscogsLoader+GetArtistDetails Tests.swift */; };
 		0AA094F22CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA094F12CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift */; };
 		0AA094F42CFAB8E600BAC31C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA094F32CFAB8E600BAC31C /* ContentView.swift */; };
 		0AA094F62CFAB8E700BAC31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA094F52CFAB8E700BAC31C /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A11F6F92CFC0160003E93B8 /* RemoteDiscogsLoader+Search Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteDiscogsLoader+Search Tests.swift"; sourceTree = "<group>"; };
+		0A11F6FB2CFC0196003E93B8 /* RemoteDiscogsLoader+GetArtistDetails Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteDiscogsLoader+GetArtistDetails Tests.swift"; sourceTree = "<group>"; };
 		0AA094EE2CFAB8E600BAC31C /* Clara Mobile Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clara Mobile Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA094F12CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaraMobileChallengeApp.swift; sourceTree = "<group>"; };
 		0AA094F32CFAB8E600BAC31C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			children = (
 				0AE04A962CFBB03B00FF112E /* RemoteDiscogsLoaderTests.swift */,
 				0AE04A982CFBEC6800FF112E /* HTTPClientSpy.swift */,
+				0A11F6F92CFC0160003E93B8 /* RemoteDiscogsLoader+Search Tests.swift */,
+				0A11F6FB2CFC0196003E93B8 /* RemoteDiscogsLoader+GetArtistDetails Tests.swift */,
 			);
 			path = "Clara Mobile ChallengeTests";
 			sourceTree = "<group>";
@@ -301,6 +307,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A11F6FA2CFC0160003E93B8 /* RemoteDiscogsLoader+Search Tests.swift in Sources */,
+				0A11F6FC2CFC0196003E93B8 /* RemoteDiscogsLoader+GetArtistDetails Tests.swift in Sources */,
 				0AE04A972CFBB03B00FF112E /* RemoteDiscogsLoaderTests.swift in Sources */,
 				0AE04A992CFBEC6800FF112E /* HTTPClientSpy.swift in Sources */,
 			);
