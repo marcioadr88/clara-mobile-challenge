@@ -13,4 +13,6 @@ protocol DiscogsLoader {
         type: Query,
         page: Int
     ) async throws -> Query.ReturnType
+    
+    func getArtistDetails(artistID: Int) async throws -> ArtistDetail
 }

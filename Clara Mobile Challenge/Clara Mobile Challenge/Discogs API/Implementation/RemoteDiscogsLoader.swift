@@ -72,9 +72,47 @@ class RemoteDiscogsLoader: DiscogsLoader {
             throw RemoteDiscogsLoaderError.serverError(message: nil)
         }
 
-        // Decode the responsea
+        // Decode the response
         do {
             return try JSONDecoder().decode(Query.ReturnType.self, from: data)
+        } catch {
+            throw RemoteDiscogsLoaderError.invalidData
+        }
+    }
+    
+    func getArtistDetails(artistID: Int) async throws -> ArtistDetail {
+        let artistDetailsURL = baseURL.appendingPathComponent("/artists/\(artistID)")
+        
+        guard let url = URL(string: artistDetailsURL.absoluteString) else {
+            throw RemoteDiscogsLoaderError.badRequest
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue(
+            "Discogs key=\(apiKey), secret=\(apiSecret)",
+            forHTTPHeaderField: "Authorization"
+        )
+        
+        var (data, httpResponse): (Data, HTTPURLResponse)
+        
+        do {
+            (data, httpResponse) = try await httpClient.request(request)
+        } catch {
+            throw RemoteDiscogsLoaderError.httpClientError(reason: error)
+        }
+        
+        guard httpResponse.statusCode == 200 else {
+            if httpResponse.statusCode == 400 {
+                if let serverError = try? JSONDecoder().decode(RemoteError.self, from: data) {
+                    throw RemoteDiscogsLoaderError.serverError(message: serverError.message)
+                }
+            }
+            throw RemoteDiscogsLoaderError.serverError(message: nil)
+        }
+        
+        do {
+            return try JSONDecoder().decode(ArtistDetail.self, from: data)
         } catch {
             throw RemoteDiscogsLoaderError.invalidData
         }
