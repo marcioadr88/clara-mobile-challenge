@@ -15,7 +15,7 @@ struct PaginatedResponse<T: Decodable>: Decodable {
 struct Pagination: Decodable {
     let page: Int
     let pages: Int
-    let per_page: Int
+    let perPage: Int
     let items: Int
     let urls: PaginationUrls?
 }
