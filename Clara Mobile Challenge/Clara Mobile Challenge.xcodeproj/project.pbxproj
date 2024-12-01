@@ -155,6 +155,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		0A11F71A2CFD2A57003E93B8 /* DiscogsLoader Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0AE04A962CFBB03B00FF112E /* RemoteDiscogsLoaderTests.swift */,
+				0A11F6F92CFC0160003E93B8 /* RemoteDiscogsLoader+Search Tests.swift */,
+				0A11F6FB2CFC0196003E93B8 /* RemoteDiscogsLoader+GetArtistDetails Tests.swift */,
+			);
+			path = "DiscogsLoader Tests";
+			sourceTree = "<group>";
+		};
 		0AA094E52CFAB8E600BAC31C = {
 			isa = PBXGroup;
 			children = (
@@ -198,10 +208,8 @@
 		0AA095012CFAB8E700BAC31C /* Clara Mobile ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				0AE04A962CFBB03B00FF112E /* RemoteDiscogsLoaderTests.swift */,
+				0A11F71A2CFD2A57003E93B8 /* DiscogsLoader Tests */,
 				0AE04A982CFBEC6800FF112E /* HTTPClientSpy.swift */,
-				0A11F6F92CFC0160003E93B8 /* RemoteDiscogsLoader+Search Tests.swift */,
-				0A11F6FB2CFC0196003E93B8 /* RemoteDiscogsLoader+GetArtistDetails Tests.swift */,
 			);
 			path = "Clara Mobile ChallengeTests";
 			sourceTree = "<group>";
