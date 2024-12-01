@@ -15,7 +15,7 @@ class SearchViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
     
-    var discogsLoader: DiscogsLoader?
+    var discogsLoader: DiscogsSearchLoader?
     private var cancellables = Set<AnyCancellable>()
     
     private var currentPage: Int = 1
@@ -66,7 +66,7 @@ class SearchViewModel: ObservableObject {
     }
     
     @MainActor
-    private func performArtistSearchWithLoader(query: String, loader: DiscogsLoader?) async {
+    private func performArtistSearchWithLoader(query: String, loader: DiscogsSearchLoader?) async {
         do {
             let pageContent = try await Task(priority: .background) {
                 try await loader?.search(
