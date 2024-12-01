@@ -69,12 +69,15 @@ class RemoteDiscogsLoaderTests: XCTestCase {
     }
     
     func test_requestCompletesWithInvalidData() async throws {
+        // Given
         let spy = HTTPClientSpy()
         let sut = makeSUT(httpClient: spy)
-        let invalidData = Data("invalid-json".utf8) // Datos que no se pueden decodificar
+        let invalidData = Data("invalid-json".utf8)
         
+        // When
         spy.completeNextRequest(withStatusCode: 200, data: invalidData)
         
+        // Then
         do {
             _ = try await sut.search(query: "query", type: DummyQuery(), page: 1)
             XCTFail("Expected RemoteDiscogsLoaderError.invalidData to be thrown")
