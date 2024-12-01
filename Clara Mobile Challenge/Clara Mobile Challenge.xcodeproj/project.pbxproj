@@ -78,6 +78,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A11F6F82CFBFC40003E93B8 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				0AE04A822CFACE2A00FF112E /* SearchQueryType.swift */,
+				0AE04A7C2CFABC3900FF112E /* DiscogsLoader.swift */,
+				0AE04A8E2CFB732D00FF112E /* HTTPClient.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
 		0AA094E52CFAB8E600BAC31C = {
 			isa = PBXGroup;
 			children = (
@@ -128,11 +138,9 @@
 		0AE04A7B2CFABC0100FF112E /* Discogs API */ = {
 			isa = PBXGroup;
 			children = (
+				0A11F6F82CFBFC40003E93B8 /* Contracts */,
 				0AE04A862CFACE5D00FF112E /* Implementation */,
-				0AE04A812CFACE1F00FF112E /* Search Query Type */,
 				0AE04A7E2CFACDE900FF112E /* Models */,
-				0AE04A7C2CFABC3900FF112E /* DiscogsLoader.swift */,
-				0AE04A8E2CFB732D00FF112E /* HTTPClient.swift */,
 			);
 			path = "Discogs API";
 			sourceTree = "<group>";
@@ -149,18 +157,18 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		0AE04A812CFACE1F00FF112E /* Search Query Type */ = {
+		0AE04A812CFACE1F00FF112E /* Search Query Types */ = {
 			isa = PBXGroup;
 			children = (
-				0AE04A822CFACE2A00FF112E /* SearchQueryType.swift */,
 				0AE04A842CFACE3B00FF112E /* ArtistSearchType.swift */,
 			);
-			path = "Search Query Type";
+			path = "Search Query Types";
 			sourceTree = "<group>";
 		};
 		0AE04A862CFACE5D00FF112E /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				0AE04A812CFACE1F00FF112E /* Search Query Types */,
 				0AE04A872CFACE8500FF112E /* RemoteDiscogsLoader.swift */,
 				0AE04A902CFB9E0F00FF112E /* URLSessionHTTPClient.swift */,
 				0AE04A942CFB9F1200FF112E /* RemoteDiscogsLoaderError.swift */,
