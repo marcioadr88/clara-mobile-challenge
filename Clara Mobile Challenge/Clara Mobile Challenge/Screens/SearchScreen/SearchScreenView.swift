@@ -25,39 +25,19 @@ struct SearchScreenView: View {
     var body: some View {
         VStack {
             if viewModel.isLoading && viewModel.results.isEmpty {
-                ProgressView("Searching...")
-                    .padding()
+                LoadingView(message: "Searching...")
             } else if let errorMessage = viewModel.errorMessage {
-                Text(errorMessage)
-                    .foregroundColor(.red)
-                    .padding()
+                ErrorView(message: errorMessage)
             } else if viewModel.results.isEmpty {
-                Text("Start typing to search for artists")
-                    .foregroundColor(.gray)
-                    .padding()
+                EmptyStateView(message: "Start typing to search for artists")
             } else {
-                List(viewModel.results, id: \.self, selection: $selection) { artist in
-                    NavigationLink {
-                        SearchResultsScreenView(selection: $selection)
-                    } label: {
-                        VStack(alignment: .leading) {
-                            ArtistSearchResultView(artist: artist)
-                                .onAppear {
-                                    if artist == viewModel.results.last {
-                                        viewModel.loadNextPage()
-                                    }
-                                }
-                            
-                        }
-                    }
-                    
-                    if artist == viewModel.results.last && viewModel.isLoading {
-                        ProgressView("Loading more...")
-                            .frame(maxWidth: .infinity, alignment: .center)
-                    }
-                }
+                ArtistSearchResultsListView(
+                    results: viewModel.results,
+                    isLoading: viewModel.isLoading,
+                    loadNextPage: viewModel.loadNextPage, 
+                    selection: $selection
+                )
             }
-            
         }
         .onChange(of: viewModel.query) { newQuery in
             if newQuery.isEmpty {
