@@ -8,7 +8,7 @@
 import Foundation
 
 struct ArtistSearchType: SearchQueryType {
-    typealias ReturnType = PaginatedResponse<Artist>
+    typealias ReturnType = PaginatedResponse<ArtistSearchResult>
     
     var typeIdentifier: String {
         return "artist"

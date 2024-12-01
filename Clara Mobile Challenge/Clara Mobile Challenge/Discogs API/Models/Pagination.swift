@@ -17,10 +17,11 @@ struct Pagination: Decodable {
     let pages: Int
     let perPage: Int
     let items: Int
-    let urls: PaginationUrls?
-}
-
-struct PaginationUrls: Decodable {
-    let last: String?
-    let next: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case page
+        case pages
+        case perPage = "per_page"
+        case items
+    }
 }
