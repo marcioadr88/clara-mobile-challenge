@@ -18,26 +18,46 @@ class SearchViewModel: ObservableObject {
     var discogsLoader: DiscogsLoader?
     private var cancellables = Set<AnyCancellable>()
     
+    private var currentPage: Int = 1
+    private var totalPages: Int = 1
+    
     init() {
         bindQuery()
     }
     
     private func bindQuery() {
         $query
-            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
+            .debounce(for: .milliseconds(400), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .sink { [weak self] query in
                 guard !query.isEmpty else {
-                    self?.results = []
+                    self?.reset()
                     return
                 }
                 
-                self?.performSearch(query: query)
+                self?.performNewSearch(query: query)
             }
             .store(in: &cancellables)
     }
     
-    private func performSearch(query: String) {
+    private func reset() {
+        currentPage = 1
+        totalPages = 1
+        results = []
+    }
+    
+    private func performNewSearch(query: String) {
+        reset()
+        search()
+    }
+    
+    func loadNextPage() {
+        guard currentPage <= totalPages else { return }
+        
+        search()
+    }
+    
+    private func search() {
         Task { @MainActor in
             isLoading = true
             await performArtistSearchWithLoader(query: query, loader: discogsLoader)
@@ -49,10 +69,19 @@ class SearchViewModel: ObservableObject {
     private func performArtistSearchWithLoader(query: String, loader: DiscogsLoader?) async {
         do {
             let pageContent = try await Task(priority: .background) {
-                return try await loader?.search(query: query, type: ArtistSearchType(), page: 1)
+                try await loader?.search(
+                    query: query,
+                    type: ArtistSearchType(),
+                    page: currentPage
+                )
             }.value
             
-            results.append(contentsOf: pageContent?.results ?? [])
+            guard let pageContent else { return }
+            
+            totalPages = pageContent.pagination.pages
+            currentPage += 1
+            
+            results.append(contentsOf: pageContent.results)
         } catch let error {
             errorMessage = error.localizedDescription
         }

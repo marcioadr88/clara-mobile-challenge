@@ -18,7 +18,7 @@ struct SearchScreenView: View {
     
     var body: some View {
         VStack {
-            if viewModel.isLoading {
+            if viewModel.isLoading && viewModel.results.isEmpty {
                 ProgressView("Searching...")
                     .padding()
             } else if let errorMessage = viewModel.errorMessage {
@@ -33,6 +33,16 @@ struct SearchScreenView: View {
                 List(selection: $selection) {
                     ForEach(viewModel.results, id: \.id) { artist in
                         ArtistSearchResultView(artist: artist)
+                            .onAppear {
+                                if artist == viewModel.results.last {
+                                    viewModel.loadNextPage()
+                                }
+                            }
+                    }
+                    
+                    if viewModel.isLoading {
+                        ProgressView("Loading more...")
+                            .frame(maxWidth: .infinity, alignment: .center)
                     }
                 }
             }
