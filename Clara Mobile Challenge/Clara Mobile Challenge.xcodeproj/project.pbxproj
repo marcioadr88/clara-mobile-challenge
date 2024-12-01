@@ -23,6 +23,8 @@
 		0AE04A952CFB9F1200FF112E /* RemoteDiscogsLoaderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE04A942CFB9F1200FF112E /* RemoteDiscogsLoaderError.swift */; };
 		0AE04A972CFBB03B00FF112E /* RemoteDiscogsLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE04A962CFBB03B00FF112E /* RemoteDiscogsLoaderTests.swift */; };
 		0AE04A992CFBEC6800FF112E /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE04A982CFBEC6800FF112E /* HTTPClientSpy.swift */; };
+		0AE04A9B2CFBEEF400FF112E /* ArtistDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE04A9A2CFBEEF400FF112E /* ArtistDetail.swift */; };
+		0AE04A9D2CFBEF0500FF112E /* BandMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE04A9C2CFBEF0500FF112E /* BandMember.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		0AE04A942CFB9F1200FF112E /* RemoteDiscogsLoaderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDiscogsLoaderError.swift; sourceTree = "<group>"; };
 		0AE04A962CFBB03B00FF112E /* RemoteDiscogsLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDiscogsLoaderTests.swift; sourceTree = "<group>"; };
 		0AE04A982CFBEC6800FF112E /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
+		0AE04A9A2CFBEEF400FF112E /* ArtistDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetail.swift; sourceTree = "<group>"; };
+		0AE04A9C2CFBEF0500FF112E /* BandMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandMember.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 				0AE04A922CFB9F0300FF112E /* RemoteError.swift */,
 				0AE04A7F2CFACDFB00FF112E /* Artist.swift */,
 				0AE04A8A2CFACEA800FF112E /* Pagination.swift */,
+				0AE04A9A2CFBEEF400FF112E /* ArtistDetail.swift */,
+				0AE04A9C2CFBEF0500FF112E /* BandMember.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +270,8 @@
 			files = (
 				0AE04A852CFACE3B00FF112E /* ArtistSearchType.swift in Sources */,
 				0AE04A912CFB9E0F00FF112E /* URLSessionHTTPClient.swift in Sources */,
+				0AE04A9D2CFBEF0500FF112E /* BandMember.swift in Sources */,
+				0AE04A9B2CFBEEF400FF112E /* ArtistDetail.swift in Sources */,
 				0AE04A952CFB9F1200FF112E /* RemoteDiscogsLoaderError.swift in Sources */,
 				0AE04A7D2CFABC3900FF112E /* DiscogsLoader.swift in Sources */,
 				0AE04A882CFACE8500FF112E /* RemoteDiscogsLoader.swift in Sources */,
