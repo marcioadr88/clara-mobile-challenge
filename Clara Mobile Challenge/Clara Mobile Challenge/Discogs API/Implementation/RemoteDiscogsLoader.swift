@@ -30,8 +30,9 @@ class RemoteDiscogsLoader: DiscogsLoader {
         type: Query,
         page: Int
     ) async throws -> Query.ReturnType {
-        // Construct the URL
-        guard var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true) else {
+        let searchURL = baseURL.appendingPathComponent("/database/search")
+        
+        guard var urlComponents = URLComponents(url: searchURL, resolvingAgainstBaseURL: true) else {
             throw RemoteDiscogsLoaderError.badRequest
         }
 
