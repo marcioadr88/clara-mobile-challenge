@@ -171,6 +171,23 @@
         }
       }
     },
+    "seeReleases" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "See releases"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver lanzamientos"
+          }
+        }
+      }
+    },
     "selectArtist" : {
       "extractionState" : "manual",
       "localizations" : {

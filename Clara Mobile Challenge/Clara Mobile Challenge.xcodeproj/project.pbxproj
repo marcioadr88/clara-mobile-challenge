@@ -30,6 +30,7 @@
 		0A11F72F2CFD7780003E93B8 /* Localizables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F72E2CFD7780003E93B8 /* Localizables.swift */; };
 		0A11F7322CFD78B8003E93B8 /* Strings.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 0A11F7312CFD78B8003E93B8 /* Strings.xcstrings */; };
 		0A11F7352CFD8245003E93B8 /* ArtistDetailsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F7342CFD8245003E93B8 /* ArtistDetailsContentView.swift */; };
+		0A11F7372CFD8C90003E93B8 /* ReleasesButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F7362CFD8C90003E93B8 /* ReleasesButtonView.swift */; };
 		0AA094F22CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA094F12CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift */; };
 		0AA094F42CFAB8E600BAC31C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA094F32CFAB8E600BAC31C /* ContentView.swift */; };
 		0AA094F62CFAB8E700BAC31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA094F52CFAB8E700BAC31C /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 		0A11F72E2CFD7780003E93B8 /* Localizables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizables.swift; sourceTree = "<group>"; };
 		0A11F7312CFD78B8003E93B8 /* Strings.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Strings.xcstrings; sourceTree = "<group>"; };
 		0A11F7342CFD8245003E93B8 /* ArtistDetailsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailsContentView.swift; sourceTree = "<group>"; };
+		0A11F7362CFD8C90003E93B8 /* ReleasesButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleasesButtonView.swift; sourceTree = "<group>"; };
 		0AA094EE2CFAB8E600BAC31C /* Clara Mobile Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clara Mobile Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA094F12CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaraMobileChallengeApp.swift; sourceTree = "<group>"; };
 		0AA094F32CFAB8E600BAC31C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				0A11F72A2CFD6C10003E93B8 /* ArtistProfileSectionView.swift */,
 				0A11F72C2CFD6CC4003E93B8 /* ArtistDetailImageView.swift */,
 				0A11F7342CFD8245003E93B8 /* ArtistDetailsContentView.swift */,
+				0A11F7362CFD8C90003E93B8 /* ReleasesButtonView.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				0A11F72F2CFD7780003E93B8 /* Localizables.swift in Sources */,
 				0A11F7222CFD588A003E93B8 /* SearchResultsScreenViewModel.swift in Sources */,
 				0A11F7132CFD2739003E93B8 /* LoadingView.swift in Sources */,
+				0A11F7372CFD8C90003E93B8 /* ReleasesButtonView.swift in Sources */,
 				0A11F7242CFD6304003E93B8 /* View+DimissKeyboard.swift in Sources */,
 				0AE04A9D2CFBEF0500FF112E /* BandMember.swift in Sources */,
 				0AE04A9B2CFBEEF400FF112E /* ArtistDetail.swift in Sources */,

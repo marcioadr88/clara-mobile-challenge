@@ -17,6 +17,12 @@ struct ArtistDetailsContentView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
             ArtistDetailImageView(imageURL: details.imageURL)
+            
+            VStack(alignment: .center) {
+                ReleasesButtonView()
+            }
+            .frame(maxWidth: .infinity)
+            
             ArtistProfileSectionView(profile: details.profile)
             
             if let members = details.members, !members.isEmpty {
