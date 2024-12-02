@@ -31,8 +31,10 @@ struct SearchScreenView: View {
                 LoadingView(message: Localizables.searching)
             } else if let errorMessage = viewModel.errorMessage {
                 ErrorView(message: Localizables.errorOccurred(errorMessage))
-            } else if viewModel.results.isEmpty {
+            } else if viewModel.results.isEmpty && viewModel.query.isEmpty {
                 EmptyStateView(message: Localizables.startTypingToSearch)
+            } else if viewModel.results.isEmpty {
+                EmptyStateView(message: Localizables.noResultsFound)
             } else {
                 ArtistSearchResultsListView(
                     results: viewModel.results,
