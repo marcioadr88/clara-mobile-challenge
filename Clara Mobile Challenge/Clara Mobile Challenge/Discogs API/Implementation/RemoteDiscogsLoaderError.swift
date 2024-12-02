@@ -13,3 +13,27 @@ enum RemoteDiscogsLoaderError: Error {
     case badRequest
     case serverError(message: String?)
 }
+
+extension RemoteDiscogsLoaderError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .invalidData:
+            return Localizables.invalidDataError
+        case .badRequest:
+            return Localizables.badRequestError
+        case .httpClientError:
+            return Localizables.httpClientError
+        case .serverError(let message):
+            return Localizables.serverError(message ?? "")
+        }
+    }
+    
+    var failureReason: String? {
+        switch self {
+        case .httpClientError(let error):
+            return error.localizedDescription
+        default:
+            return nil
+        }
+    }
+}

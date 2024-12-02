@@ -24,9 +24,9 @@ struct SearchResultsScreenView: View {
     var body: some View {
         VStack {
             if viewModel.isLoading {
-                LoadingView(message: "Loading artist details...")
+                LoadingView(message: Localizables.loadingArtistDetails)
             } else if let errorMessage = viewModel.errorMessage {
-                ErrorView(message: errorMessage)
+                ErrorView(message: Localizables.errorOccurred(errorMessage))
             } else if let details = viewModel.artistDetail {
                 ScrollView(.vertical) {
                     VStack(alignment: .leading, spacing: 24) {
@@ -41,7 +41,7 @@ struct SearchResultsScreenView: View {
                     .padding()
                 }
             } else {
-                EmptyStateView(message: "Select an artist")
+                EmptyStateView(message: Localizables.selectArtist)
             }
         }
         .onChange(of: selection) { _ in

@@ -16,7 +16,7 @@ struct BandMembersSectionView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Band Members")
+            Text(Localizables.bandMembers)
                 .font(.title2)
                 .fontWeight(.bold)
             

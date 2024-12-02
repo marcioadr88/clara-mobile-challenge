@@ -30,7 +30,7 @@ struct ArtistSearchResultsListView: View {
             }
             
             if artist == results.last && isLoading {
-                ProgressView("Loading more...")
+                ProgressView(Localizables.loadingMore)
                     .frame(maxWidth: .infinity, alignment: .center)
             }
         }

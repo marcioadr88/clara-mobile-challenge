@@ -22,7 +22,7 @@ struct ArtistProfileSectionView: View {
                 .multilineTextAlignment(.leading)
                 .lineSpacing(5)
         } else {
-            Text("No profile data")
+            Text(Localizables.noProfileData)
         }
     }
 }

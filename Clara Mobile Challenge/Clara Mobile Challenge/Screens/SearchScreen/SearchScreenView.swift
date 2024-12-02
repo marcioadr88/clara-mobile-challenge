@@ -25,11 +25,11 @@ struct SearchScreenView: View {
     var body: some View {
         VStack {
             if viewModel.isLoading && viewModel.results.isEmpty {
-                LoadingView(message: "Searching...")
+                LoadingView(message: Localizables.searching)
             } else if let errorMessage = viewModel.errorMessage {
-                ErrorView(message: errorMessage)
+                ErrorView(message: Localizables.errorOccurred(errorMessage))
             } else if viewModel.results.isEmpty {
-                EmptyStateView(message: "Start typing to search for artists")
+                EmptyStateView(message: Localizables.startTypingToSearch)
             } else {
                 ArtistSearchResultsListView(
                     results: viewModel.results,
@@ -55,7 +55,7 @@ struct SearchScreenView: View {
                 selection = nil
             }
         }
-        .navigationTitle("Search")
+        .navigationTitle(Localizables.search)
         .searchable(text: $viewModel.query)
     }
 }
