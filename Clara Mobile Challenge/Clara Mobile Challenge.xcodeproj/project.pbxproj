@@ -36,6 +36,13 @@
 		0A11F73E2CFD96C5003E93B8 /* ArtistReleaseScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F73D2CFD96C5003E93B8 /* ArtistReleaseScreenView.swift */; };
 		0A11F7402CFD98F3003E93B8 /* ArtistReleaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F73F2CFD98F3003E93B8 /* ArtistReleaseViewModel.swift */; };
 		0A11F7422CFDA8A8003E93B8 /* ArtistReleaseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F7412CFDA8A8003E93B8 /* ArtistReleaseRowView.swift */; };
+		0A6BA7362CFE050500627FD3 /* ImageCacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6BA7352CFE050500627FD3 /* ImageCacheProtocol.swift */; };
+		0A6BA7382CFE053200627FD3 /* ImageLoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6BA7372CFE053200627FD3 /* ImageLoaderProtocol.swift */; };
+		0A6BA73A2CFE054C00627FD3 /* InMemoryImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6BA7392CFE054C00627FD3 /* InMemoryImageCache.swift */; };
+		0A6BA73C2CFE056700627FD3 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6BA73B2CFE056700627FD3 /* ImageLoader.swift */; };
+		0A6BA73E2CFE058A00627FD3 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6BA73D2CFE058A00627FD3 /* CachedAsyncImage.swift */; };
+		0A6BA7422CFE09AD00627FD3 /* AsyncImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6BA7412CFE09AD00627FD3 /* AsyncImageLoader.swift */; };
+		0A6BA7442CFE09D100627FD3 /* CachedAsyncImagePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6BA7432CFE09D100627FD3 /* CachedAsyncImagePhase.swift */; };
 		0AA094F22CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA094F12CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift */; };
 		0AA094F42CFAB8E600BAC31C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA094F32CFAB8E600BAC31C /* ContentView.swift */; };
 		0AA094F62CFAB8E700BAC31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA094F52CFAB8E700BAC31C /* Assets.xcassets */; };
@@ -96,6 +103,13 @@
 		0A11F73D2CFD96C5003E93B8 /* ArtistReleaseScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistReleaseScreenView.swift; sourceTree = "<group>"; };
 		0A11F73F2CFD98F3003E93B8 /* ArtistReleaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistReleaseViewModel.swift; sourceTree = "<group>"; };
 		0A11F7412CFDA8A8003E93B8 /* ArtistReleaseRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistReleaseRowView.swift; sourceTree = "<group>"; };
+		0A6BA7352CFE050500627FD3 /* ImageCacheProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheProtocol.swift; sourceTree = "<group>"; };
+		0A6BA7372CFE053200627FD3 /* ImageLoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderProtocol.swift; sourceTree = "<group>"; };
+		0A6BA7392CFE054C00627FD3 /* InMemoryImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryImageCache.swift; sourceTree = "<group>"; };
+		0A6BA73B2CFE056700627FD3 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		0A6BA73D2CFE058A00627FD3 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
+		0A6BA7412CFE09AD00627FD3 /* AsyncImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageLoader.swift; sourceTree = "<group>"; };
+		0A6BA7432CFE09D100627FD3 /* CachedAsyncImagePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImagePhase.swift; sourceTree = "<group>"; };
 		0AA094EE2CFAB8E600BAC31C /* Clara Mobile Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clara Mobile Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA094F12CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaraMobileChallengeApp.swift; sourceTree = "<group>"; };
 		0AA094F32CFAB8E600BAC31C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -181,6 +195,7 @@
 		0A11F70F2CFCE3AA003E93B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0A6BA7342CFE04F000627FD3 /* Cached Async Image */,
 				0A11F7142CFD2754003E93B8 /* ErrorView.swift */,
 				0A11F7162CFD276A003E93B8 /* EmptyStateView.swift */,
 				0A11F7102CFCE3BE003E93B8 /* ArtistSearchResultView.swift */,
@@ -258,6 +273,36 @@
 				0A11F73F2CFD98F3003E93B8 /* ArtistReleaseViewModel.swift */,
 			);
 			path = ArtistReleaseScreen;
+			sourceTree = "<group>";
+		};
+		0A6BA7342CFE04F000627FD3 /* Cached Async Image */ = {
+			isa = PBXGroup;
+			children = (
+				0A6BA7402CFE08D800627FD3 /* Loader */,
+				0A6BA73F2CFE08C200627FD3 /* Cache */,
+				0A6BA73D2CFE058A00627FD3 /* CachedAsyncImage.swift */,
+				0A6BA7412CFE09AD00627FD3 /* AsyncImageLoader.swift */,
+				0A6BA7432CFE09D100627FD3 /* CachedAsyncImagePhase.swift */,
+			);
+			path = "Cached Async Image";
+			sourceTree = "<group>";
+		};
+		0A6BA73F2CFE08C200627FD3 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				0A6BA7352CFE050500627FD3 /* ImageCacheProtocol.swift */,
+				0A6BA7392CFE054C00627FD3 /* InMemoryImageCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		0A6BA7402CFE08D800627FD3 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				0A6BA73B2CFE056700627FD3 /* ImageLoader.swift */,
+				0A6BA7372CFE053200627FD3 /* ImageLoaderProtocol.swift */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		0AA094E52CFAB8E600BAC31C = {
@@ -457,7 +502,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A6BA73E2CFE058A00627FD3 /* CachedAsyncImage.swift in Sources */,
+				0A6BA7422CFE09AD00627FD3 /* AsyncImageLoader.swift in Sources */,
 				0AE04A852CFACE3B00FF112E /* ArtistSearchType.swift in Sources */,
+				0A6BA73A2CFE054C00627FD3 /* InMemoryImageCache.swift in Sources */,
 				0AE04A912CFB9E0F00FF112E /* URLSessionHTTPClient.swift in Sources */,
 				0A11F72F2CFD7780003E93B8 /* Localizables.swift in Sources */,
 				0A11F7222CFD588A003E93B8 /* SearchResultsScreenViewModel.swift in Sources */,
@@ -470,6 +518,7 @@
 				0AE04A9B2CFBEEF400FF112E /* ArtistDetail.swift in Sources */,
 				0A11F7282CFD6B23003E93B8 /* BandMembersSectionView.swift in Sources */,
 				0AE04A952CFB9F1200FF112E /* RemoteDiscogsLoaderError.swift in Sources */,
+				0A6BA73C2CFE056700627FD3 /* ImageLoader.swift in Sources */,
 				0A11F72D2CFD6CC4003E93B8 /* ArtistDetailImageView.swift in Sources */,
 				0A11F73B2CFD95FE003E93B8 /* LoaderSortOrder.swift in Sources */,
 				0A11F7392CFD944C003E93B8 /* ArtistRelease.swift in Sources */,
@@ -481,6 +530,7 @@
 				0AE04A882CFACE8500FF112E /* RemoteDiscogsLoader.swift in Sources */,
 				0AA094F42CFAB8E600BAC31C /* ContentView.swift in Sources */,
 				0AE04A802CFACDFB00FF112E /* ArtistSearchResult.swift in Sources */,
+				0A6BA7382CFE053200627FD3 /* ImageLoaderProtocol.swift in Sources */,
 				0AE04A8F2CFB732D00FF112E /* HTTPClient.swift in Sources */,
 				0A11F70E2CFCCBAA003E93B8 /* NullDiscogsLoader.swift in Sources */,
 				0A11F7002CFCA8E0003E93B8 /* SearchScreenView.swift in Sources */,
@@ -494,6 +544,8 @@
 				0AA094F22CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift in Sources */,
 				0AE04A832CFACE2A00FF112E /* SearchQueryType.swift in Sources */,
 				0A11F7112CFCE3BE003E93B8 /* ArtistSearchResultView.swift in Sources */,
+				0A6BA7442CFE09D100627FD3 /* CachedAsyncImagePhase.swift in Sources */,
+				0A6BA7362CFE050500627FD3 /* ImageCacheProtocol.swift in Sources */,
 				0AE04A932CFB9F0300FF112E /* RemoteError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
