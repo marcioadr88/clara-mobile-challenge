@@ -48,6 +48,25 @@ SwiftLint is integrated into the project using Swift Package Manager via Xcode. 
 
 If this message appears: **"Trust & Enable All"**, ensure to approve it to enable SwiftLint.
 
+![Swiftlint Warning](images/swiftlint_warning.png)
+
 ## Screenshots
 
-*(Insert screenshots here)*
+# Screenshots
+
+## Search Screen
+![iPhone](images/search_iphone.png)
+![iPad Portrait](images/search_ipad_port.png)
+
+## Artist Detail Screen
+![iPhone](images/detail_iphone.png)
+![iPad Portrait](images/detail_ipad_port.png)
+![iPad Landscape](images/search_detail_ipad_land.png)
+
+# Artist Releases Screen
+![iPhone](images/releases_iphone.png)
+![iPad Landscape](images/detail_ipad_land.png)
+
+# Filters
+![iPhone](images/filter_iphone.png)
+![iPad Landscape](images/filter_ipad_land.png)
