@@ -19,4 +19,8 @@ struct NullDiscogsLoader: DiscogsLoader {
     func getArtistDetails(artistID: Int) async throws -> ArtistDetail {
         throw Error.nullError
     }
+    
+    func getArtistRelease(artistID: Int, sortOrder: LoaderSortOrder, page: Int, perPage: Int) async throws -> ReleasesPaginatedResponse<ArtistRelease> {
+        throw Error.nullError
+    }
 }

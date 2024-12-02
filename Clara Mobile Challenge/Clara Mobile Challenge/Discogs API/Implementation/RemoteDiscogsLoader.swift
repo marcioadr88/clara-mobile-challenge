@@ -68,7 +68,24 @@ class RemoteDiscogsLoader: DiscogsLoader {
         
         do {
             return try JSONDecoder().decode(T.self, from: data)
+        } catch let decodingError as DecodingError {
+            print("Decoding error: \(decodingError.localizedDescription)")
+            switch decodingError {
+            case .typeMismatch(let key, let context):
+                print("Type mismatch for key \(key): \(context.debugDescription)")
+            case .valueNotFound(let key, let context):
+                print("Value not found for key \(key): \(context.debugDescription)")
+            case .keyNotFound(let key, let context):
+                print("Key '\(key.stringValue)' not found: \(context.debugDescription)")
+            case .dataCorrupted(let context):
+                print("Data corrupted: \(context.debugDescription)")
+            @unknown default:
+                print("Unknown decoding error")
+            }
+            
+            throw RemoteDiscogsLoaderError.invalidData
         } catch {
+            print("Unexpected error: \(error.localizedDescription)")
             throw RemoteDiscogsLoaderError.invalidData
         }
     }
@@ -101,7 +118,7 @@ extension RemoteDiscogsLoader: DiscogsGetArtistsDetailsLoader {
 }
 
 extension RemoteDiscogsLoader: DiscogsGetArtistReleasesLoader {
-    func getArtistRelease(artistID: Int, sortOrder: LoaderSortOrder, page: Int, perPage: Int) async throws -> PaginatedResponse<ArtistRelease> {
+    func getArtistRelease(artistID: Int, sortOrder: LoaderSortOrder, page: Int, perPage: Int) async throws -> ReleasesPaginatedResponse<ArtistRelease> {
         let queryItems = [
             URLQueryItem(name: "sort_order", value: sortOrder.rawValue),
             URLQueryItem(name: "page", value: String(page)),

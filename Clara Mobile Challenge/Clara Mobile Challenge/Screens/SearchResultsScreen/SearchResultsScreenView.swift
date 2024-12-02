@@ -11,7 +11,8 @@ struct SearchResultsScreenView: View {
     @Binding var selection: ArtistSearchResult?
     @StateObject private var viewModel = SearchResultsScreenViewModel()
     
-    @Environment(\.remoteDiscogsLoader) var discogsLoader
+    @Environment(\.remoteDiscogsLoader) 
+    var discogsLoader
     
     init(selection: Binding<ArtistSearchResult?>) {
         _selection = selection

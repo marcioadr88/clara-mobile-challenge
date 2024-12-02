@@ -33,6 +33,9 @@
 		0A11F7372CFD8C90003E93B8 /* ReleasesButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F7362CFD8C90003E93B8 /* ReleasesButtonView.swift */; };
 		0A11F7392CFD944C003E93B8 /* ArtistRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F7382CFD944C003E93B8 /* ArtistRelease.swift */; };
 		0A11F73B2CFD95FE003E93B8 /* LoaderSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F73A2CFD95FE003E93B8 /* LoaderSortOrder.swift */; };
+		0A11F73E2CFD96C5003E93B8 /* ArtistReleaseScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F73D2CFD96C5003E93B8 /* ArtistReleaseScreenView.swift */; };
+		0A11F7402CFD98F3003E93B8 /* ArtistReleaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F73F2CFD98F3003E93B8 /* ArtistReleaseViewModel.swift */; };
+		0A11F7422CFDA8A8003E93B8 /* ArtistReleaseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F7412CFDA8A8003E93B8 /* ArtistReleaseRowView.swift */; };
 		0AA094F22CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA094F12CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift */; };
 		0AA094F42CFAB8E600BAC31C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA094F32CFAB8E600BAC31C /* ContentView.swift */; };
 		0AA094F62CFAB8E700BAC31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA094F52CFAB8E700BAC31C /* Assets.xcassets */; };
@@ -90,6 +93,9 @@
 		0A11F7362CFD8C90003E93B8 /* ReleasesButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleasesButtonView.swift; sourceTree = "<group>"; };
 		0A11F7382CFD944C003E93B8 /* ArtistRelease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistRelease.swift; sourceTree = "<group>"; };
 		0A11F73A2CFD95FE003E93B8 /* LoaderSortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderSortOrder.swift; sourceTree = "<group>"; };
+		0A11F73D2CFD96C5003E93B8 /* ArtistReleaseScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistReleaseScreenView.swift; sourceTree = "<group>"; };
+		0A11F73F2CFD98F3003E93B8 /* ArtistReleaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistReleaseViewModel.swift; sourceTree = "<group>"; };
+		0A11F7412CFDA8A8003E93B8 /* ArtistReleaseRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistReleaseRowView.swift; sourceTree = "<group>"; };
 		0AA094EE2CFAB8E600BAC31C /* Clara Mobile Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clara Mobile Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA094F12CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaraMobileChallengeApp.swift; sourceTree = "<group>"; };
 		0AA094F32CFAB8E600BAC31C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 				0AA094F32CFAB8E600BAC31C /* ContentView.swift */,
 				0A11F7082CFCB5B2003E93B8 /* SearchScreen */,
 				0A11F7202CFD5827003E93B8 /* SearchResultsScreen */,
+				0A11F73C2CFD96AB003E93B8 /* ArtistReleaseScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 				0A11F7102CFCE3BE003E93B8 /* ArtistSearchResultView.swift */,
 				0A11F7122CFD2739003E93B8 /* LoadingView.swift */,
 				0A11F7252CFD6AB1003E93B8 /* BandMemberView.swift */,
+				0A11F7412CFDA8A8003E93B8 /* ArtistReleaseRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,6 +249,15 @@
 				0A11F7182CFD27CD003E93B8 /* ArtistSearchResultsListView.swift */,
 			);
 			path = Sections;
+			sourceTree = "<group>";
+		};
+		0A11F73C2CFD96AB003E93B8 /* ArtistReleaseScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0A11F73D2CFD96C5003E93B8 /* ArtistReleaseScreenView.swift */,
+				0A11F73F2CFD98F3003E93B8 /* ArtistReleaseViewModel.swift */,
+			);
+			path = ArtistReleaseScreen;
 			sourceTree = "<group>";
 		};
 		0AA094E52CFAB8E600BAC31C = {
@@ -447,6 +464,8 @@
 				0A11F7132CFD2739003E93B8 /* LoadingView.swift in Sources */,
 				0A11F7372CFD8C90003E93B8 /* ReleasesButtonView.swift in Sources */,
 				0A11F7242CFD6304003E93B8 /* View+DimissKeyboard.swift in Sources */,
+				0A11F7402CFD98F3003E93B8 /* ArtistReleaseViewModel.swift in Sources */,
+				0A11F7422CFDA8A8003E93B8 /* ArtistReleaseRowView.swift in Sources */,
 				0AE04A9D2CFBEF0500FF112E /* BandMember.swift in Sources */,
 				0AE04A9B2CFBEEF400FF112E /* ArtistDetail.swift in Sources */,
 				0A11F7282CFD6B23003E93B8 /* BandMembersSectionView.swift in Sources */,
@@ -467,6 +486,7 @@
 				0A11F7002CFCA8E0003E93B8 /* SearchScreenView.swift in Sources */,
 				0A11F7262CFD6AB1003E93B8 /* BandMemberView.swift in Sources */,
 				0A11F70A2CFCB5C3003E93B8 /* SearchScreenViewModel.swift in Sources */,
+				0A11F73E2CFD96C5003E93B8 /* ArtistReleaseScreenView.swift in Sources */,
 				0A11F7042CFCA94D003E93B8 /* SearchResultsScreenView.swift in Sources */,
 				0A11F7172CFD276A003E93B8 /* EmptyStateView.swift in Sources */,
 				0A11F72B2CFD6C10003E93B8 /* ArtistProfileSectionView.swift in Sources */,

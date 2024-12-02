@@ -26,7 +26,7 @@ protocol DiscogsGetArtistReleasesLoader {
         sortOrder: LoaderSortOrder,
         page: Int,
         perPage: Int
-    ) async throws -> PaginatedResponse<ArtistRelease>
+    ) async throws -> ReleasesPaginatedResponse<ArtistRelease>
 }
 
 protocol DiscogsLoader: DiscogsSearchLoader, DiscogsGetArtistsDetailsLoader, DiscogsGetArtistReleasesLoader {}

@@ -10,7 +10,7 @@ import Foundation
 
 final class MockDiscogsSearchLoader: DiscogsSearchLoader {
     struct MockSearchResult: SearchQueryType {
-        typealias ReturnType = PaginatedResponse<ArtistSearchResult>
+        typealias ReturnType = SearchPaginatedResponse<ArtistSearchResult>
         var typeIdentifier: String = "mock"
     }
     
@@ -29,7 +29,7 @@ final class MockDiscogsSearchLoader: DiscogsSearchLoader {
             throw error
         }
         
-        return PaginatedResponse(
+        return SearchPaginatedResponse(
             pagination: Pagination(page: page, pages: totalPages, perPage: perPage, items: items),
             results: results
         ) as! Query.ReturnType

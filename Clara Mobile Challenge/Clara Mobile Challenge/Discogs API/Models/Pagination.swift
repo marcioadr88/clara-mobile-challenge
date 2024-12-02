@@ -7,9 +7,14 @@
 
 import Foundation
 
-struct PaginatedResponse<T: Decodable>: Decodable {
+struct SearchPaginatedResponse<T: Decodable>: Decodable {
     let pagination: Pagination
     let results: [T]
+}
+
+struct ReleasesPaginatedResponse<T: Decodable>: Decodable {
+    let pagination: Pagination
+    let releases: [T]
 }
 
 struct Pagination: Decodable {
