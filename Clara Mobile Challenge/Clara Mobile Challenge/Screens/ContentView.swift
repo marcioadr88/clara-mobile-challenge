@@ -11,8 +11,7 @@ struct ContentView: View {
     @Environment(\.horizontalSizeClass)
     var horizontalSizeClass
     
-    @State
-    private var selectedArtist: ArtistSearchResult?
+    @State private var selectedArtist: ArtistSearchResult?
     
     var body: some View {
         if horizontalSizeClass == .compact {

@@ -10,7 +10,10 @@ import SwiftUI
 struct SearchScreenView: View {
     @StateObject private var viewModel = SearchViewModel()
     @Binding var selection: ArtistSearchResult?
-    @Environment(\.isSearching) var isSearching
+    
+    @Environment(\.isSearching)
+    var isSearching
+    
     @Environment(\.remoteDiscogsLoader)
     var remoteLoader
     

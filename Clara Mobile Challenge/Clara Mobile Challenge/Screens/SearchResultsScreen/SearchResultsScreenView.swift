@@ -11,7 +11,7 @@ struct SearchResultsScreenView: View {
     @Binding var selection: ArtistSearchResult?
     @StateObject private var viewModel = SearchResultsScreenViewModel()
     
-    @Environment(\.remoteDiscogsLoader) 
+    @Environment(\.remoteDiscogsLoader)
     var discogsLoader
     
     init(selection: Binding<ArtistSearchResult?>) {
@@ -28,9 +28,9 @@ struct SearchResultsScreenView: View {
                 LoadingView(message: Localizables.loadingArtistDetails)
             } else if let errorMessage = viewModel.errorMessage {
                 ErrorView(message: Localizables.errorOccurred(errorMessage))
-            } else if let details = viewModel.artistDetail {
+            } else if let detail = viewModel.artistDetail {
                 ScrollView(.vertical) {
-                    ArtistDetailsContentView(details: details)
+                    ArtistDetailsContentView(artistDetail: detail)
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                         .padding()
                 }
@@ -43,7 +43,10 @@ struct SearchResultsScreenView: View {
         }
         .onAppear {
             viewModel.loader = discogsLoader
-            loadArtistDetails()
+            
+            if !viewModel.isLoaded {
+                loadArtistDetails()
+            }
         }
         .navigationTitle(selection?.title ?? "")
     }

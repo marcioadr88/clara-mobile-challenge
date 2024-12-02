@@ -12,23 +12,7 @@ struct ArtistReleaseRowView: View {
     
     var body: some View {
         HStack(spacing: 16) {
-            AsyncImage(url: URL(string: release.thumb ?? "")) { phase in
-                switch phase {
-                case .empty, .failure:
-                    Color.gray
-                        .frame(width: 50, height: 50)
-                        .cornerRadius(4)
-                case .success(let image):
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 50, height: 50)
-                        .cornerRadius(4)
-                        .shadow(radius: 2)
-                @unknown default:
-                    EmptyView()
-                }
-            }
+            ArtistReleaseImageView(url: URL(string: release.thumb ?? ""))
             
             VStack(alignment: .leading, spacing: 4) {
                 if let title = release.title {
@@ -53,5 +37,45 @@ struct ArtistReleaseRowView: View {
             Spacer()
         }
         .padding(.vertical, 8)
+    }
+}
+
+struct ArtistReleaseImageView: View {
+    private let url: URL?
+    
+    init(url: URL?) {
+        self.url = url
+    }
+    
+    var body: some View {
+        if let url {
+            AsyncImage(url: url) { phase in
+                switch phase {
+                case .empty, .failure:
+                    placeholder
+                case .success(let image):
+                    albumImage(image: image)
+                @unknown default:
+                    placeholder
+                }
+            }
+        } else {
+            placeholder
+        }
+    }
+    
+    func albumImage(image: Image) -> some View {
+        image
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 50, height: 50)
+            .cornerRadius(4)
+            .shadow(radius: 2)
+    }
+    
+    var placeholder: some View {
+        Color.gray
+            .frame(width: 50, height: 50)
+            .cornerRadius(4)
     }
 }

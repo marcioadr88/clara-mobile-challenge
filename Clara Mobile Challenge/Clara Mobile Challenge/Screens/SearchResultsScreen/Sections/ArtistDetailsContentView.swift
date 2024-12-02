@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct ArtistDetailsContentView: View {
-    private let details: ArtistDetail
+    private let artistDetail: ArtistDetail
     
-    init(details: ArtistDetail) {
-        self.details = details
+    init(artistDetail: ArtistDetail) {
+        self.artistDetail = artistDetail
     }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
-            ArtistDetailImageView(imageURL: details.imageURL)
+            ArtistDetailImageView(imageURL: artistDetail.imageURL)
             
             VStack(alignment: .center) {
-                ReleasesButtonView()
+                ReleasesButtonView(artistDetail: artistDetail)
             }
             .frame(maxWidth: .infinity)
             
-            ArtistProfileSectionView(profile: details.profile)
+            ArtistProfileSectionView(profile: artistDetail.profile)
             
-            if let members = details.members, !members.isEmpty {
+            if let members = artistDetail.members, !members.isEmpty {
                 BandMembersSectionView(members: members)
             }
         }
@@ -33,11 +33,15 @@ struct ArtistDetailsContentView: View {
 }
 
 #Preview {
-    ArtistDetailsContentView(details: ArtistDetail(id: 1,
-                                                   name: "Artist",
-                                                   profile: "A profile description",
-                                                   imageURL: "https://placehold.co/600x400",
-                                                   releasesURL: "",
-                                                   urls: [],
-                                                   members: []))
+    ArtistDetailsContentView(artistDetail:
+                                ArtistDetail(
+                                    id: 1,
+                                    name: "Artist",
+                                    profile: "A profile description",
+                                    imageURL: "https://placehold.co/600x400",
+                                    releasesURL: "",
+                                    urls: [],
+                                    members: []
+                                )
+    )
 }

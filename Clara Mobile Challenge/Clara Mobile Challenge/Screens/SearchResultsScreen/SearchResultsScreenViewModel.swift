@@ -10,7 +10,9 @@ import Foundation
 class SearchResultsScreenViewModel: ObservableObject {
     @Published var artistDetail: ArtistDetail?
     @Published var isLoading: Bool = false
-    @Published var errorMessage: String? = nil
+    @Published var errorMessage: String?
+    
+    var isLoaded: Bool = false
     
     var loader: DiscogsGetArtistsDetailsLoader?
     
@@ -29,9 +31,12 @@ class SearchResultsScreenViewModel: ObservableObject {
     func load(artistID: Int, with loader: DiscogsGetArtistsDetailsLoader) async {
         do {
             isLoading = true
+            isLoaded = false
             artistDetail = try await Task(priority: .background) {
                 try await loader.getArtistDetails(artistID: artistID)
             }.value
+            
+            isLoaded = true
         } catch {
             errorMessage = error.localizedDescription
         }

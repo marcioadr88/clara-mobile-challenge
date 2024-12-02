@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ReleasesButtonView: View {
+    private let artistDetail: ArtistDetail
+    
+    init(artistDetail: ArtistDetail) {
+        self.artistDetail = artistDetail
+    }
+    
     var body: some View {
-        NavigationLink(destination: Text("")) {
+        NavigationLink(destination: ArtistReleaseScreenView(artist: artistDetail)) {
             Text(Localizables.seeReleases)
                 .fontWeight(.semibold)
         }
@@ -17,8 +23,4 @@ struct ReleasesButtonView: View {
         .buttonStyle(.bordered)
         .buttonBorderShape(.capsule)
     }
-}
-
-#Preview {
-    ReleasesButtonView()
 }

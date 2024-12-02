@@ -71,13 +71,13 @@ class RemoteDiscogsLoader: DiscogsLoader {
         } catch let decodingError as DecodingError {
             print("Decoding error: \(decodingError.localizedDescription)")
             switch decodingError {
-            case .typeMismatch(let key, let context):
+            case let .typeMismatch(key, context):
                 print("Type mismatch for key \(key): \(context.debugDescription)")
-            case .valueNotFound(let key, let context):
+            case let .valueNotFound(key, context):
                 print("Value not found for key \(key): \(context.debugDescription)")
-            case .keyNotFound(let key, let context):
+            case let .keyNotFound(key, context):
                 print("Key '\(key.stringValue)' not found: \(context.debugDescription)")
-            case .dataCorrupted(let context):
+            case let .dataCorrupted(context):
                 print("Data corrupted: \(context.debugDescription)")
             @unknown default:
                 print("Unknown decoding error")
