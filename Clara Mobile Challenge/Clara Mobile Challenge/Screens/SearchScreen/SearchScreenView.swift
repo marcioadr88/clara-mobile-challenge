@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchScreenView: View {
     @StateObject private var viewModel = SearchViewModel()
     @Binding var selection: ArtistSearchResult?
-    
+    @Environment(\.isSearching) var isSearching
     @Environment(\.remoteDiscogsLoader)
     var remoteLoader
     
@@ -34,10 +34,13 @@ struct SearchScreenView: View {
                 ArtistSearchResultsListView(
                     results: viewModel.results,
                     isLoading: viewModel.isLoading,
-                    loadNextPage: viewModel.loadNextPage, 
+                    loadNextPage: viewModel.loadNextPage,
                     selection: $selection
                 )
             }
+        }
+        .onChange(of: selection) { _ in
+            dismissKeyboard()
         }
         .onChange(of: viewModel.query) { newQuery in
             if newQuery.isEmpty {
@@ -46,6 +49,11 @@ struct SearchScreenView: View {
         }
         .onAppear {
             viewModel.discogsLoader = remoteLoader
+        }
+        .onChange(of: isSearching) { isSearching in
+            if !isSearching {
+                selection = nil
+            }
         }
         .navigationTitle("Search")
         .searchable(text: $viewModel.query)
