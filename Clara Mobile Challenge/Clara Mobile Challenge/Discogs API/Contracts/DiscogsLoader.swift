@@ -20,4 +20,13 @@ protocol DiscogsGetArtistsDetailsLoader {
     func getArtistDetails(artistID: Int) async throws -> ArtistDetail
 }
 
-protocol DiscogsLoader: DiscogsSearchLoader, DiscogsGetArtistsDetailsLoader {}
+protocol DiscogsGetArtistReleasesLoader {
+    func getArtistRelease(
+        artistID: Int,
+        sortOrder: LoaderSortOrder,
+        page: Int,
+        perPage: Int
+    ) async throws -> PaginatedResponse<ArtistRelease>
+}
+
+protocol DiscogsLoader: DiscogsSearchLoader, DiscogsGetArtistsDetailsLoader, DiscogsGetArtistReleasesLoader {}

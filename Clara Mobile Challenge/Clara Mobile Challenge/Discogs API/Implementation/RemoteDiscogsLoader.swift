@@ -99,3 +99,16 @@ extension RemoteDiscogsLoader: DiscogsGetArtistsDetailsLoader {
         return try await performRequest(request)
     }
 }
+
+extension RemoteDiscogsLoader: DiscogsGetArtistReleasesLoader {
+    func getArtistRelease(artistID: Int, sortOrder: LoaderSortOrder, page: Int, perPage: Int) async throws -> PaginatedResponse<ArtistRelease> {
+        let queryItems = [
+            URLQueryItem(name: "sort_order", value: sortOrder.rawValue),
+            URLQueryItem(name: "page", value: String(page)),
+            URLQueryItem(name: "per_page", value: String(perPage))
+        ]
+        
+        let request = try createRequest(for: "/artists/\(artistID)/releases", queryItems: queryItems)
+        return try await performRequest(request)
+    }
+}
