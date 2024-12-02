@@ -49,14 +49,12 @@ struct ArtistReleaseImageView: View {
     
     var body: some View {
         if let url {
-            AsyncImage(url: url) { phase in
+            CachedAsyncImage(url: url) { phase in
                 switch phase {
                 case .empty, .failure:
                     placeholder
                 case .success(let image):
                     albumImage(image: image)
-                @unknown default:
-                    placeholder
                 }
             }
         } else {

@@ -27,13 +27,11 @@ struct ArtistSearchResultView: View {
     
     @ViewBuilder private var imageContent: some View {
         if let url = URL(string: artist.thumb) {
-            AsyncImage(url: url) { phase in
+            CachedAsyncImage(url: url) { phase in
                 switch phase {
                 case .success(let image):
                     image.resizable()
                 case .failure, .empty:
-                    imagePlaceholder
-                @unknown default:
                     imagePlaceholder
                 }
             }

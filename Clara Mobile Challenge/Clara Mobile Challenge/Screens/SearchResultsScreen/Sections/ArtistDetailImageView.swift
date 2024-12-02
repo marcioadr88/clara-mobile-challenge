@@ -16,13 +16,11 @@ struct ArtistDetailImageView: View {
     
     var body: some View {
         if let imageURL, let url = URL(string: imageURL) {
-            AsyncImage(url: url) { phase in
+            CachedAsyncImage(url: url) { phase in
                 switch phase {
                 case .success(let image):
                     artistImage(image)
                 case .failure, .empty:
-                    placeholder
-                @unknown default:
                     placeholder
                 }
             }
