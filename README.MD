@@ -50,7 +50,8 @@ If this message appears: **"Trust & Enable All"**, ensure to approve it to enabl
 
 ![Swiftlint Warning](images/swiftlint_warning.png)
 
-## Screenshots
+# Test Results
+![Test Results](images/test_results.png)
 
 # Screenshots
 
