@@ -29,16 +29,9 @@ struct SearchResultsScreenView: View {
                 ErrorView(message: Localizables.errorOccurred(errorMessage))
             } else if let details = viewModel.artistDetail {
                 ScrollView(.vertical) {
-                    VStack(alignment: .leading, spacing: 24) {
-                        ArtistDetailImageView(imageURL: details.imageURL)
-                        ArtistProfileSectionView(profile: details.profile)
-                        
-                        if let members = details.members, !members.isEmpty {
-                            BandMembersSectionView(members: members)
-                        }
-                    }
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                    .padding()
+                    ArtistDetailsContentView(details: details)
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .padding()
                 }
             } else {
                 EmptyStateView(message: Localizables.selectArtist)
