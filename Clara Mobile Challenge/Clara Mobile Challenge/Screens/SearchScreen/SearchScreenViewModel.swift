@@ -21,6 +21,12 @@ class SearchViewModel: ObservableObject {
     private var currentPage: Int = 1
     private var totalPages: Int = 1
     
+    private let searchFinished = PassthroughSubject<Void, Never>()
+    
+    var searchFinishedPublisher: AnyPublisher<Void, Never> {
+        searchFinished.eraseToAnyPublisher()
+    }
+    
     init() {
         bindQuery()
     }
@@ -34,7 +40,7 @@ class SearchViewModel: ObservableObject {
                     self?.reset()
                     return
                 }
-                
+
                 self?.performNewSearch(query: query)
             }
             .store(in: &cancellables)
@@ -44,6 +50,7 @@ class SearchViewModel: ObservableObject {
         currentPage = 1
         totalPages = 1
         results = []
+        errorMessage = nil
     }
     
     private func performNewSearch(query: String) {
@@ -62,6 +69,8 @@ class SearchViewModel: ObservableObject {
             isLoading = true
             await performArtistSearchWithLoader(query: query, loader: discogsLoader)
             isLoading = false
+            
+            searchFinished.send()
         }
     }
     

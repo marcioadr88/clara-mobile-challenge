@@ -20,6 +20,8 @@
 		0A11F7152CFD2754003E93B8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F7142CFD2754003E93B8 /* ErrorView.swift */; };
 		0A11F7172CFD276A003E93B8 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F7162CFD276A003E93B8 /* EmptyStateView.swift */; };
 		0A11F7192CFD27CD003E93B8 /* ArtistSearchResultsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F7182CFD27CD003E93B8 /* ArtistSearchResultsListView.swift */; };
+		0A11F71D2CFD2A9C003E93B8 /* SearchScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F71C2CFD2A9C003E93B8 /* SearchScreenViewModelTests.swift */; };
+		0A11F71F2CFD2B2D003E93B8 /* MockDiscogsSearchLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11F71E2CFD2B2D003E93B8 /* MockDiscogsSearchLoader.swift */; };
 		0AA094F22CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA094F12CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift */; };
 		0AA094F42CFAB8E600BAC31C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA094F32CFAB8E600BAC31C /* ContentView.swift */; };
 		0AA094F62CFAB8E700BAC31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA094F52CFAB8E700BAC31C /* Assets.xcassets */; };
@@ -64,6 +66,8 @@
 		0A11F7142CFD2754003E93B8 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		0A11F7162CFD276A003E93B8 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		0A11F7182CFD27CD003E93B8 /* ArtistSearchResultsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchResultsListView.swift; sourceTree = "<group>"; };
+		0A11F71C2CFD2A9C003E93B8 /* SearchScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModelTests.swift; sourceTree = "<group>"; };
+		0A11F71E2CFD2B2D003E93B8 /* MockDiscogsSearchLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDiscogsSearchLoader.swift; sourceTree = "<group>"; };
 		0AA094EE2CFAB8E600BAC31C /* Clara Mobile Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clara Mobile Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA094F12CFAB8E600BAC31C /* ClaraMobileChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaraMobileChallengeApp.swift; sourceTree = "<group>"; };
 		0AA094F32CFAB8E600BAC31C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -158,11 +162,21 @@
 		0A11F71A2CFD2A57003E93B8 /* DiscogsLoader Tests */ = {
 			isa = PBXGroup;
 			children = (
+				0AE04A982CFBEC6800FF112E /* HTTPClientSpy.swift */,
 				0AE04A962CFBB03B00FF112E /* RemoteDiscogsLoaderTests.swift */,
 				0A11F6F92CFC0160003E93B8 /* RemoteDiscogsLoader+Search Tests.swift */,
 				0A11F6FB2CFC0196003E93B8 /* RemoteDiscogsLoader+GetArtistDetails Tests.swift */,
 			);
 			path = "DiscogsLoader Tests";
+			sourceTree = "<group>";
+		};
+		0A11F71B2CFD2A77003E93B8 /* SearchScreenViewModel Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0A11F71C2CFD2A9C003E93B8 /* SearchScreenViewModelTests.swift */,
+				0A11F71E2CFD2B2D003E93B8 /* MockDiscogsSearchLoader.swift */,
+			);
+			path = "SearchScreenViewModel Tests";
 			sourceTree = "<group>";
 		};
 		0AA094E52CFAB8E600BAC31C = {
@@ -208,8 +222,8 @@
 		0AA095012CFAB8E700BAC31C /* Clara Mobile ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				0A11F71B2CFD2A77003E93B8 /* SearchScreenViewModel Tests */,
 				0A11F71A2CFD2A57003E93B8 /* DiscogsLoader Tests */,
-				0AE04A982CFBEC6800FF112E /* HTTPClientSpy.swift */,
 			);
 			path = "Clara Mobile ChallengeTests";
 			sourceTree = "<group>";
@@ -392,8 +406,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A11F6FA2CFC0160003E93B8 /* RemoteDiscogsLoader+Search Tests.swift in Sources */,
+				0A11F71F2CFD2B2D003E93B8 /* MockDiscogsSearchLoader.swift in Sources */,
 				0A11F6FC2CFC0196003E93B8 /* RemoteDiscogsLoader+GetArtistDetails Tests.swift in Sources */,
 				0AE04A972CFBB03B00FF112E /* RemoteDiscogsLoaderTests.swift in Sources */,
+				0A11F71D2CFD2A9C003E93B8 /* SearchScreenViewModelTests.swift in Sources */,
 				0AE04A992CFBEC6800FF112E /* HTTPClientSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
